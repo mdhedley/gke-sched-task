@@ -12,3 +12,18 @@ spec:
           containers:
           - name: scrapercontainer
             image: gcr.io/providence-demo/gkeweatherscraper
+            env:
+            - name: PROJECT_ID
+              value: providence-demo
+            - name: LOCATION
+              value: global
+            - name: KEYRING
+              value: storage
+            - name: KEY
+              value: mykey
+            - name: ENCRYPTED_BUCKET
+              value: mdh-prov-enc-bucket
+            - name: SECRET
+              value: dark-sky-key
+            - name: WEATHER_BUCKET
+              value: mdh-weather-bucket
