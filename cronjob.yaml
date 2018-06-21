@@ -12,6 +12,7 @@ spec:
           containers:
           - name: scrapercontainer
             image: gcr.io/providence-demo/gkeweatherscraper
+            imagePullPolicy: Always
             env:
             - name: PROJECT_ID
               value: providence-demo
