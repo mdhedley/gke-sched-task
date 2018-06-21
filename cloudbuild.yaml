@@ -1,9 +1,7 @@
 steps:
-  name: 'gcr.io/cloud-builders/git'
-  args: ['submodule', 'update', '--init','--recursive' ]
-steps:
-  name: 'gcr.io/cloud-builders/docker'
-  args: ['build','-t','gcr.io/$PROJECT_ID/gkeweatherscraper:$COMMIT_SHA','-t','gcr.io/$PROJECT_ID/gkeweatherscraper:latest']
-steps:
-  name: 'gcr.io/cloud-builders/docker'
-  args: ['push','gcr.io/$PROJECT_ID/gkeweatherscraper']
+  - name: 'gcr.io/cloud-builders/git'
+    args: ['submodule', 'update', '--init','--recursive' ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build','-t','gcr.io/$PROJECT_ID/gkeweatherscraper:$COMMIT_SHA','-t','gcr.io/$PROJECT_ID/gkeweatherscraper:latest']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push','gcr.io/$PROJECT_ID/gkeweatherscraper']
